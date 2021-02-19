@@ -17,6 +17,6 @@ class Api::V1::AnimesController < ApplicationController
     private 
 
     def anime_params
-        params.require(:post).permit(:title, :review, :user_id, :rating)
+        params.require(:anime).permit(:title, :review, :user_id, :rating)
     end 
 end
