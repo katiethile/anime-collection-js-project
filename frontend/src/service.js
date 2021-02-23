@@ -3,8 +3,8 @@ class ApiService {
         this.baseUrl = `http://localhost:3000/api/v1`
     }
 
-    findOrCreateUser(e){
-        return fetch(`${this.baseUrl}/users`, {
+    async findOrCreateUser(e){
+         const response = await fetch(`${this.baseUrl}/users`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -17,15 +17,11 @@ class ApiService {
                     }
                 })
             })
-                .then(resp => {
-                    let json = resp.json()
-                    console.log(json) 
-                    return json     
-                })
+                return response.json()
     }
 
-    postAnime(e, user_id){
-        return fetch(`${this.baseUrl}/animes`, {
+    async postAnime(e, user_id){
+        const response = await fetch(`${this.baseUrl}/animes`, {
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json",
@@ -42,12 +38,19 @@ class ApiService {
                     }
                 )
             })
-            .then(resp => resp.json())
+            return response.json()
     }
 
-    deleteAnime(e){
-        fetch(`${this.baseUrl}/animes/${e.target.parentNode.dataset.id}`, {
-            method: "DELETE"
-        })
+    async deleteAnime(e){
+        const response = await fetch (`${this.baseUrl}/animes/${e.target.parentNode.dataset.id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                },
+            })
+            return response.json()
+        }
+        
     }
-}
+    

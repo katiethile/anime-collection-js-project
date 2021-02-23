@@ -18,7 +18,7 @@ class Anime {
     <form id="new-anime-form">
     <label>Anime Title:</label>
     <input type="text" id="anime-title"/>
-    <label>Rate it:</label>
+    <label>Rate it (1-10):</label>
     <input type="text" id="anime-rating"/>
     <label>Review it:</label>
     <input type="text" id="anime-review"/>
