@@ -14,8 +14,9 @@ class Anime {
     let body = document.getElementById('container')
     let form = 
     `
+    <img src="https://i.imgur.com/fHs8bHM.gif" alt="anime"> <br>
     <form id="new-anime-form">
-    <label>What is your anime you want to add?:</label>
+    <label>Anime Title:</label>
     <input type="text" id="anime-title"/>
     <label>Rate it:</label>
     <input type="text" id="anime-rating"/>
@@ -44,11 +45,11 @@ class Anime {
         })
     }
 
-    createAnimeCard(){
+    createAnimeCard() {
         let p = document.createElement('p')
         p.setAttribute('data-id', this.id)
-        p.innerHTML = `${this.title} ~~ ${this.rating} ~~ ${this.review}`
-        let removeForm = ` <button type="button" id="${this.id}" class="remove-anime"> Remove anime from collection </button>`
+        p.innerHTML = `${this.title} - ${this.rating} - ${this.review}`
+        let removeForm = ` <button type="button" id="${this.id}" class="remove-anime"> Remove Anime </button>`
         p.insertAdjacentHTML('beforeend', removeForm)
         this.appendAnime(p)
     }
@@ -56,7 +57,7 @@ class Anime {
     appendAnime(p){
         let animes = document.getElementsByClassName('animes-container')
         animes[0].append(p)
-        let button = document.getElementById('`${this.id}`')
+        let button = document.getElementById(`${this.id}`)
         this.remove(button)
     }
 
@@ -64,7 +65,7 @@ class Anime {
         button.addEventListener('click', function(e){
             e.preventDefault()
             apiService.deleteAnime(e)
-            e.target.parentElement.remove();
+                e.target.parentElement.remove();
         })
     }
 }
