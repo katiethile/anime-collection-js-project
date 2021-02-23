@@ -37,7 +37,7 @@ class Anime {
             e.preventDefault()
             apiService.postAnime(e, user_id)
             .then(json => {
-                console.log(json)
+                // console.log(json)
                 newForm.reset()
                 let newAnime = new Anime(json)
                 newAnime.createAnimeCard()

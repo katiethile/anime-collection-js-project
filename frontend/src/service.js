@@ -13,7 +13,7 @@ class ApiService {
             body: JSON.stringify(
                 {
                     user: {
-                        name: e.target.children[1].value
+                        username: e.target.children[1].value
                     }
                 })
             })
@@ -33,9 +33,10 @@ class ApiService {
                 },
                 body: JSON.stringify(
                     {
-                        problem: {
-                            name: e.target.children[1].value,
-                            description: e.target.children[3].value,
+                        anime: {
+                            title: e.target.children.value,
+                            rating: e.target.children.value,
+                            review: e.target.children.value,
                             user_id: user_id
                         }
                     }
@@ -45,7 +46,7 @@ class ApiService {
     }
 
     deleteAnime(e){
-        fetch(`${this.baseUrl}/problems/${e.target.parentNode.dataset.id}`, {
+        fetch(`${this.baseUrl}/animes/${e.target.parentNode.dataset.id}`, {
             method: "DELETE"
         })
     }

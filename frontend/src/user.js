@@ -3,7 +3,7 @@ class User {
 
     constructor(user){
         this.id = user.id
-        this.name = user.username
+        this.username = user.username
         this.animes = user.animes
         User.allUsers.push(this)
     }
