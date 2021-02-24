@@ -30,14 +30,15 @@ class ApiService {
                 body: JSON.stringify(
                     {
                         anime: {
-                            title: e.target.children.value,
-                            rating: e.target.children.value,
-                            review: e.target.children.value,
+                            title: e.target.children[1].value,
+                            rating: e.target.children[3].value,
+                            review: e.target.children[5].value,
                             user_id: user_id
                         }
                     }
                 )
             })
+
             return response.json()
     }
 

@@ -32,12 +32,11 @@ class Anime {
     }
 
     static makeAnime(user_id){
-        let newForm = document.getElementById('new-anime-form')
+        let newForm = document.getElementById('new-anime-form') 
         newForm.addEventListener('submit', function(e){
             e.preventDefault()
             apiService.postAnime(e, user_id)
             .then(json => {
-                // console.log(json)
                 newForm.reset()
                 let newAnime = new Anime(json)
                 newAnime.createAnimeCard()
@@ -61,7 +60,7 @@ class Anime {
         this.remove(button)
     }
 
-    remove(button){
+    async remove(button){
         button.addEventListener('click', function(e){
             e.preventDefault()
             apiService.deleteAnime(e)
