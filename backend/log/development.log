@@ -3692,3 +3692,196 @@ Processing by Api::V1::AnimesController#destroy as JSON
 Completed 200 OK in 56ms (Views: 0.8ms | ActiveRecord: 44.1ms | Allocations: 2588)
 
 
+Started GET "/api/v1/animes" for ::1 at 2021-02-25 18:57:18 -0800
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AnimesController#index as HTML
+  [1m[36mAnime Load (0.6ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:4:in `index'
+Completed 200 OK in 82ms (Views: 64.1ms | ActiveRecord: 2.5ms | Allocations: 7934)
+
+
+Started GET "/favicon.ico" for ::1 at 2021-02-25 18:57:19 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/users" for ::1 at 2021-02-25 18:57:31 -0800
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 51ms (Views: 18.0ms | ActiveRecord: 3.3ms | Allocations: 5517)
+
+
+Started GET "/api/v1/user/1" for ::1 at 2021-02-25 18:57:41 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/user/1"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/users/1" for ::1 at 2021-02-25 18:57:53 -0800
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 28ms (Views: 1.9ms | ActiveRecord: 0.9ms | Allocations: 2915)
+
+
+Started GET "/api/v1/users" for ::1 at 2021-02-25 18:58:01 -0800
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.5ms | Allocations: 1401)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-02-25 18:59:42 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1280)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-02-25 18:59:42 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 712)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-02-25 19:01:25 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 12ms (ActiveRecord: 0.5ms | Allocations: 1149)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-02-25 19:01:25 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 712)
+
+
+Started POST "/api/v1/animes" for ::1 at 2021-02-25 19:01:51 -0800
+Processing by Api::V1::AnimesController#create as JSON
+  Parameters: {"anime"=>{"title"=>"Hunter x Hunter ", "rating"=>"7", "review"=>"pretty cool ", "user_id"=>4}}
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mAnime Create (2.0ms)[0m  [1m[32mINSERT INTO "animes" ("title", "rating", "user_id", "review", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Hunter x Hunter "], ["rating", 7], ["user_id", 4], ["review", "pretty cool "], ["created_at", "2021-02-26 03:01:51.808579"], ["updated_at", "2021-02-26 03:01:51.808579"]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+Completed 200 OK in 114ms (Views: 1.9ms | ActiveRecord: 5.8ms | Allocations: 8412)
+
+
+Started GET "/api/v1/animes" for ::1 at 2021-02-25 19:02:14 -0800
+Processing by Api::V1::AnimesController#index as HTML
+  [1m[36mAnime Load (0.3ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.3ms | Allocations: 1396)
+
+
+Started GET "/api/v1/users" for ::1 at 2021-02-25 19:02:25 -0800
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.2ms | Allocations: 1388)
+
+
+Started DELETE "/api/v1/animes/18" for ::1 at 2021-02-25 19:02:34 -0800
+Processing by Api::V1::AnimesController#destroy as JSON
+  Parameters: {"id"=>"18", "anime"=>{}}
+  [1m[36mAnime Load (0.3ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[36mAnime Destroy (0.5ms)[0m  [1m[31mDELETE FROM "animes" WHERE "animes"."id" = ?[0m  [["id", 18]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 3.5ms | Allocations: 2715)
+
+
+Started GET "/api/v1/animes" for ::1 at 2021-02-25 19:02:37 -0800
+Processing by Api::V1::AnimesController#index as HTML
+  [1m[36mAnime Load (0.4ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.4ms | Allocations: 1258)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-02-25 19:02:52 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"stacy yu"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stacy yu"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "stacy yu"], ["created_at", "2021-02-26 03:02:52.905610"], ["updated_at", "2021-02-26 03:02:52.905610"]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `create'
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `create'
+Completed 200 OK in 16ms (Views: 0.6ms | ActiveRecord: 5.5ms | Allocations: 3047)
+
+
+Started GET "/api/v1/users" for ::1 at 2021-02-25 19:02:58 -0800
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.5ms | Allocations: 1507)
+
+
