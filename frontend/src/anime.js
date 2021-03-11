@@ -17,11 +17,11 @@ class Anime {
     <img src="https://i.imgur.com/fHs8bHM.gif" alt="anime"> <br>
     <form id="new-anime-form">
     <label>Anime Title:</label>
-    <input type="text" id="anime-title"/>
+    <input type="text" id="anime-title" required/>
     <label>Rate it (1-10):</label>
-    <input type="number" id="anime-rating" min=1 max=10 maxlength=2/>
+    <input type="number" id="anime-rating" min=1 max=10 maxlength=2 required/>
     <label>Review it:</label>
-    <input type="text" id="anime-review"/>
+    <input type="text" id="anime-review" required/>
     <input type="submit"/>
     <h4>Your current animes:</h4>
     </form>
