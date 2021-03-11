@@ -19,7 +19,7 @@ class Anime {
     <label>Anime Title:</label>
     <input type="text" id="anime-title"/>
     <label>Rate it (1-10):</label>
-    <input type="text" id="anime-rating"/>
+    <input type="number" id="anime-rating" min=1 max=10 maxlength=2/>
     <label>Review it:</label>
     <input type="text" id="anime-review"/>
     <input type="submit"/>
@@ -53,6 +53,7 @@ class Anime {
         this.appendAnime(p)
     }
 
+
     appendAnime(p){
         let animes = document.getElementsByClassName('animes-container')
         animes[0].append(p)
@@ -67,4 +68,6 @@ class Anime {
                 e.target.parentElement.remove();
         })
     }
+
+    
 }

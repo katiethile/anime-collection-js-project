@@ -30,6 +30,15 @@ class User {
         userGreeting.innerHTML = `<h1>Hey, ${this.username}!</h1>`
         body.append(userGreeting)
         this.renderAnimes()
+        apiService.displayAllAnimes()
+        .then(animes => {
+            for (let i=0; i < animes.length; i++){
+                if (this.id == animes[i].user_id){
+                    let userAnimes = new Anime(animes[i]);
+                    userAnimes.createAnimeCard();
+                }
+            }
+        })
         Anime.newAnimeForm(this.id)
     }
 

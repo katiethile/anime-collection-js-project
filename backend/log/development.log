@@ -3885,3 +3885,1025 @@ Processing by Api::V1::UsersController#index as HTML
 Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.5ms | Allocations: 1507)
 
 
+Started POST "/api/v1/users" for ::1 at 2021-03-10 22:39:25 -0800
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 23ms (ActiveRecord: 2.1ms | Allocations: 5021)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 22:39:25 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 890)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 22:41:14 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 12ms (ActiveRecord: 0.7ms | Allocations: 1149)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 22:41:14 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 712)
+
+
+Started POST "/api/v1/animes" for ::1 at 2021-03-10 22:42:55 -0800
+Processing by Api::V1::AnimesController#create as JSON
+  Parameters: {"anime"=>{"title"=>"Jujutsu Kaisen", "rating"=>"8", "user_id"=>4}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mAnime Create (4.2ms)[0m  [1m[32mINSERT INTO "animes" ("title", "rating", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Jujutsu Kaisen"], ["rating", 8], ["user_id", 4], ["created_at", "2021-03-11 06:42:55.680220"], ["updated_at", "2021-03-11 06:42:55.680220"]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+Completed 200 OK in 64ms (Views: 0.6ms | ActiveRecord: 7.2ms | Allocations: 11699)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 22:43:50 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 1149)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 22:43:50 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 712)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 22:44:42 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 13ms (ActiveRecord: 1.0ms | Allocations: 1149)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 22:44:42 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 712)
+
+
+Started POST "/api/v1/animes" for ::1 at 2021-03-10 22:44:54 -0800
+Processing by Api::V1::AnimesController#create as JSON
+  Parameters: {"anime"=>{"title"=>"inuyasha", "rating"=>"cool", "review"=>"8", "user_id"=>4}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mAnime Create (0.8ms)[0m  [1m[32mINSERT INTO "animes" ("title", "rating", "user_id", "review", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "inuyasha"], ["rating", 0], ["user_id", 4], ["review", "8"], ["created_at", "2021-03-11 06:44:54.285177"], ["updated_at", "2021-03-11 06:44:54.285177"]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+Completed 200 OK in 22ms (Views: 0.7ms | ActiveRecord: 2.6ms | Allocations: 3738)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 22:45:56 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms | Allocations: 1132)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 22:45:56 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 712)
+
+
+Started POST "/api/v1/animes" for ::1 at 2021-03-10 22:46:18 -0800
+Processing by Api::V1::AnimesController#create as JSON
+  Parameters: {"anime"=>{"title"=>"hi", "rating"=>"cool", "review"=>"8", "user_id"=>4}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mAnime Create (1.5ms)[0m  [1m[32mINSERT INTO "animes" ("title", "rating", "user_id", "review", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "hi"], ["rating", 0], ["user_id", 4], ["review", "8"], ["created_at", "2021-03-11 06:46:18.570664"], ["updated_at", "2021-03-11 06:46:18.570664"]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 3.2ms | Allocations: 3738)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 22:47:59 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 19ms (ActiveRecord: 1.0ms | Allocations: 1132)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 22:47:59 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 713)
+
+
+Started POST "/api/v1/animes" for ::1 at 2021-03-10 22:48:04 -0800
+Processing by Api::V1::AnimesController#create as JSON
+  Parameters: {"anime"=>{"title"=>"hi", "rating"=>"cool", "review"=>"8", "user_id"=>4}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mAnime Create (0.6ms)[0m  [1m[32mINSERT INTO "animes" ("title", "rating", "user_id", "review", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "hi"], ["rating", 0], ["user_id", 4], ["review", "8"], ["created_at", "2021-03-11 06:48:04.280964"], ["updated_at", "2021-03-11 06:48:04.280964"]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 2.3ms | Allocations: 3738)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 22:49:59 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms | Allocations: 1132)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 22:49:59 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 712)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 22:50:28 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms | Allocations: 1132)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 22:50:28 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 712)
+
+
+Started POST "/api/v1/animes" for ::1 at 2021-03-10 22:50:33 -0800
+Processing by Api::V1::AnimesController#create as JSON
+  Parameters: {"anime"=>{"title"=>"", "rating"=>"cool", "review"=>"", "user_id"=>4}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mAnime Create (2.1ms)[0m  [1m[32mINSERT INTO "animes" ("title", "rating", "user_id", "review", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["rating", 0], ["user_id", 4], ["review", ""], ["created_at", "2021-03-11 06:50:33.222397"], ["updated_at", "2021-03-11 06:50:33.222397"]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+Completed 200 OK in 20ms (Views: 0.7ms | ActiveRecord: 4.4ms | Allocations: 3734)
+
+
+Started POST "/api/v1/animes" for ::1 at 2021-03-10 22:51:03 -0800
+Processing by Api::V1::AnimesController#create as JSON
+  Parameters: {"anime"=>{"title"=>"hi", "rating"=>"cool", "review"=>"1", "user_id"=>4}}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mAnime Create (0.6ms)[0m  [1m[32mINSERT INTO "animes" ("title", "rating", "user_id", "review", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "hi"], ["rating", 0], ["user_id", 4], ["review", "1"], ["created_at", "2021-03-11 06:51:03.497506"], ["updated_at", "2021-03-11 06:51:03.497506"]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+Completed 200 OK in 27ms (Views: 1.5ms | ActiveRecord: 3.9ms | Allocations: 3734)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 22:54:20 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 14ms (ActiveRecord: 0.9ms | Allocations: 1132)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 22:54:20 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 712)
+
+
+Started POST "/api/v1/animes" for ::1 at 2021-03-10 22:54:38 -0800
+Processing by Api::V1::AnimesController#create as JSON
+  Parameters: {"anime"=>{"title"=>"hi", "rating"=>"10", "review"=>"cool", "user_id"=>4}}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mAnime Create (0.7ms)[0m  [1m[32mINSERT INTO "animes" ("title", "rating", "user_id", "review", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "hi"], ["rating", 10], ["user_id", 4], ["review", "cool"], ["created_at", "2021-03-11 06:54:38.556107"], ["updated_at", "2021-03-11 06:54:38.556107"]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+Completed 200 OK in 23ms (Views: 0.7ms | ActiveRecord: 2.9ms | Allocations: 3734)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 22:55:45 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 7ms (ActiveRecord: 1.3ms | Allocations: 1132)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 22:55:45 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 712)
+
+
+Started GET "/v1/api/animes" for ::1 at 2021-03-10 22:56:56 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/v1/api/animes"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2021-03-10 22:56:57 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/animes" for ::1 at 2021-03-10 22:57:11 -0800
+Processing by Api::V1::AnimesController#index as HTML
+  [1m[36mAnime Load (1.0ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:4:in `index'
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 1.0ms | Allocations: 2376)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 22:58:45 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1140)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 22:58:45 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 713)
+
+
+Started POST "/api/v1/animes" for ::1 at 2021-03-10 22:58:54 -0800
+Processing by Api::V1::AnimesController#create as JSON
+  Parameters: {"anime"=>{"title"=>"inuyasha", "rating"=>"2", "review"=>"cool", "user_id"=>4}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mAnime Create (49.7ms)[0m  [1m[32mINSERT INTO "animes" ("title", "rating", "user_id", "review", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "inuyasha"], ["rating", 2], ["user_id", 4], ["review", "cool"], ["created_at", "2021-03-11 06:58:54.131290"], ["updated_at", "2021-03-11 06:58:54.131290"]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+Completed 200 OK in 65ms (Views: 0.8ms | ActiveRecord: 52.6ms | Allocations: 3760)
+
+
+Started POST "/api/v1/animes" for ::1 at 2021-03-10 22:59:03 -0800
+Processing by Api::V1::AnimesController#create as JSON
+  Parameters: {"anime"=>{"title"=>"hi", "rating"=>"2", "review"=>"eh", "user_id"=>4}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mAnime Create (0.5ms)[0m  [1m[32mINSERT INTO "animes" ("title", "rating", "user_id", "review", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "hi"], ["rating", 2], ["user_id", 4], ["review", "eh"], ["created_at", "2021-03-11 06:59:03.395899"], ["updated_at", "2021-03-11 06:59:03.395899"]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 1.7ms | Allocations: 3734)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 22:59:12 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1132)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 22:59:12 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 712)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 23:00:42 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 21ms (ActiveRecord: 4.2ms | Allocations: 1132)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 23:00:42 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 712)
+
+
+Started POST "/api/v1/animes" for ::1 at 2021-03-10 23:00:46 -0800
+Processing by Api::V1::AnimesController#create as JSON
+  Parameters: {"anime"=>{"title"=>"hi", "rating"=>"i", "review"=>"i", "user_id"=>4}}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mAnime Create (0.5ms)[0m  [1m[32mINSERT INTO "animes" ("title", "rating", "user_id", "review", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "hi"], ["rating", 0], ["user_id", 4], ["review", "i"], ["created_at", "2021-03-11 07:00:46.267368"], ["updated_at", "2021-03-11 07:00:46.267368"]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+Completed 200 OK in 140ms (Views: 0.8ms | ActiveRecord: 2.6ms | Allocations: 3737)
+
+
+Started POST "/api/v1/animes" for ::1 at 2021-03-10 23:00:51 -0800
+Processing by Api::V1::AnimesController#create as JSON
+  Parameters: {"anime"=>{"title"=>"kjk", "rating"=>"kjk", "review"=>"kjk", "user_id"=>4}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mUser Load (35.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mAnime Create (1.4ms)[0m  [1m[32mINSERT INTO "animes" ("title", "rating", "user_id", "review", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "kjk"], ["rating", 0], ["user_id", 4], ["review", "kjk"], ["created_at", "2021-03-11 07:00:51.282555"], ["updated_at", "2021-03-11 07:00:51.282555"]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[35m (33.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+Completed 200 OK in 85ms (Views: 1.3ms | ActiveRecord: 70.7ms | Allocations: 4123)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 23:00:54 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1132)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 23:00:54 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 712)
+
+
+Started GET "/api/v1/animes" for ::1 at 2021-03-10 23:01:39 -0800
+Processing by Api::V1::AnimesController#index as HTML
+  [1m[36mAnime Load (1.7ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:4:in `index'
+Completed 200 OK in 24ms (Views: 17.5ms | ActiveRecord: 1.7ms | Allocations: 2912)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 23:10:48 -0800
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 28ms (ActiveRecord: 1.1ms | Allocations: 1146)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 23:10:48 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 1.0ms | Allocations: 725)
+
+
+Started POST "/api/v1/animes" for ::1 at 2021-03-10 23:10:59 -0800
+Processing by Api::V1::AnimesController#create as JSON
+  Parameters: {"anime"=>{"title"=>"hi", "rating"=>"8", "review"=>"cool", "user_id"=>4}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mAnime Create (1.0ms)[0m  [1m[32mINSERT INTO "animes" ("title", "rating", "user_id", "review", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "hi"], ["rating", 8], ["user_id", 4], ["review", "cool"], ["created_at", "2021-03-11 07:10:59.933093"], ["updated_at", "2021-03-11 07:10:59.933093"]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+Completed 200 OK in 20ms (Views: 0.6ms | ActiveRecord: 2.7ms | Allocations: 3735)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 23:11:03 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1132)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 23:11:03 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 712)
+
+
+Started GET "/api/v1/animes" for ::1 at 2021-03-10 23:11:07 -0800
+Processing by Api::V1::AnimesController#index as HTML
+  [1m[36mAnime Load (0.6ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.6ms | Allocations: 3081)
+
+
+Started POST "/api/v1/animes" for ::1 at 2021-03-10 23:18:14 -0800
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::AnimesController#create as JSON
+  Parameters: {"anime"=>{"title"=>"hi", "rating"=>"8", "review"=>"jkj", "user_id"=>4}}
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mAnime Create (2.0ms)[0m  [1m[32mINSERT INTO "animes" ("title", "rating", "user_id", "review", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "hi"], ["rating", 8], ["user_id", 4], ["review", "jkj"], ["created_at", "2021-03-11 07:18:14.360308"], ["updated_at", "2021-03-11 07:18:14.360308"]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+Completed 200 OK in 53ms (Views: 2.3ms | ActiveRecord: 5.0ms | Allocations: 3753)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 23:18:19 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms | Allocations: 1145)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 23:18:19 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 712)
+
+
+Started GET "/api/v1/animes" for ::1 at 2021-03-10 23:18:23 -0800
+Processing by Api::V1::AnimesController#index as HTML
+  [1m[36mAnime Load (0.4ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.4ms | Allocations: 3233)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 23:31:32 -0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 30ms (ActiveRecord: 10.3ms | Allocations: 1146)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 23:31:33 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 11ms (Views: 4.8ms | ActiveRecord: 0.4ms | Allocations: 725)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 23:33:40 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 8ms (ActiveRecord: 0.8ms | Allocations: 1134)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 23:33:40 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 712)
+
+
+Started GET "/api/v1/animes" for ::1 at 2021-03-10 23:33:40 -0800
+Processing by Api::V1::AnimesController#index as */*
+  [1m[36mAnime Load (0.5ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:4:in `index'
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.5ms | Allocations: 3237)
+
+
+Started GET "/api/v1/animes" for ::1 at 2021-03-10 23:34:36 -0800
+Processing by Api::V1::AnimesController#index as */*
+  [1m[36mAnime Load (0.3ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.3ms | Allocations: 3215)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 23:42:12 -0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 15ms (ActiveRecord: 0.9ms | Allocations: 1146)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 23:42:12 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 8ms (Views: 2.7ms | ActiveRecord: 0.4ms | Allocations: 725)
+
+
+Started GET "/api/v1/animes" for ::1 at 2021-03-10 23:42:12 -0800
+Processing by Api::V1::AnimesController#index as */*
+  [1m[36mAnime Load (1.0ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:4:in `index'
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 1.0ms | Allocations: 3236)
+
+
+Started POST "/api/v1/animes" for ::1 at 2021-03-10 23:42:17 -0800
+Processing by Api::V1::AnimesController#create as JSON
+  Parameters: {"anime"=>{"title"=>"hi", "rating"=>"8", "review"=>"kjk", "user_id"=>4}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mAnime Create (1.0ms)[0m  [1m[32mINSERT INTO "animes" ("title", "rating", "user_id", "review", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "hi"], ["rating", 8], ["user_id", 4], ["review", "kjk"], ["created_at", "2021-03-11 07:42:17.752650"], ["updated_at", "2021-03-11 07:42:17.752650"]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+Completed 200 OK in 20ms (Views: 0.7ms | ActiveRecord: 2.5ms | Allocations: 3734)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 23:44:55 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 19ms (ActiveRecord: 2.6ms | Allocations: 1132)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 23:44:56 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 712)
+
+
+Started GET "/api/v1/animes" for ::1 at 2021-03-10 23:44:56 -0800
+Processing by Api::V1::AnimesController#index as */*
+  [1m[36mAnime Load (0.8ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:4:in `index'
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.8ms | Allocations: 3367)
+
+
+Started POST "/api/v1/animes" for ::1 at 2021-03-10 23:45:00 -0800
+Processing by Api::V1::AnimesController#create as JSON
+  Parameters: {"anime"=>{"title"=>"hey", "rating"=>"8", "review"=>"lol", "user_id"=>4}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mAnime Create (0.6ms)[0m  [1m[32mINSERT INTO "animes" ("title", "rating", "user_id", "review", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "hey"], ["rating", 8], ["user_id", 4], ["review", "lol"], ["created_at", "2021-03-11 07:45:00.958607"], ["updated_at", "2021-03-11 07:45:00.958607"]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+Completed 200 OK in 20ms (Views: 2.3ms | ActiveRecord: 2.5ms | Allocations: 3736)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 23:46:40 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"kitty"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kitty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms | Allocations: 1132)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-03-10 23:46:40 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 712)
+
+
+Started GET "/api/v1/animes" for ::1 at 2021-03-10 23:46:40 -0800
+Processing by Api::V1::AnimesController#index as */*
+  [1m[36mAnime Load (0.2ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:4:in `index'
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.2ms | Allocations: 3519)
+
+
+Started DELETE "/api/v1/animes/3" for ::1 at 2021-03-10 23:47:42 -0800
+Processing by Api::V1::AnimesController#destroy as JSON
+  Parameters: {"id"=>"3", "anime"=>{}}
+  [1m[36mAnime Load (0.4ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[36mAnime Destroy (4.0ms)[0m  [1m[31mDELETE FROM "animes" WHERE "animes"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+Completed 200 OK in 21ms (Views: 0.6ms | ActiveRecord: 5.8ms | Allocations: 2718)
+
+
+Started DELETE "/api/v1/animes/7" for ::1 at 2021-03-10 23:47:47 -0800
+Processing by Api::V1::AnimesController#destroy as JSON
+  Parameters: {"id"=>"7", "anime"=>{}}
+  [1m[36mAnime Load (0.2ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[36mAnime Destroy (0.9ms)[0m  [1m[31mDELETE FROM "animes" WHERE "animes"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+Completed 200 OK in 17ms (Views: 0.5ms | ActiveRecord: 4.9ms | Allocations: 2569)
+
+
+Started DELETE "/api/v1/animes/19" for ::1 at 2021-03-10 23:47:48 -0800
+Processing by Api::V1::AnimesController#destroy as JSON
+  Parameters: {"id"=>"19", "anime"=>{}}
+  [1m[36mAnime Load (0.3ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[36mAnime Destroy (0.4ms)[0m  [1m[31mDELETE FROM "animes" WHERE "animes"."id" = ?[0m  [["id", 19]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+Completed 200 OK in 10ms (Views: 1.0ms | ActiveRecord: 1.9ms | Allocations: 2562)
+
+
+Started DELETE "/api/v1/animes/20" for ::1 at 2021-03-10 23:47:49 -0800
+Processing by Api::V1::AnimesController#destroy as JSON
+  Parameters: {"id"=>"20", "anime"=>{}}
+  [1m[36mAnime Load (0.2ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[36mAnime Destroy (0.7ms)[0m  [1m[31mDELETE FROM "animes" WHERE "animes"."id" = ?[0m  [["id", 20]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 2.0ms | Allocations: 2569)
+
+
+Started DELETE "/api/v1/animes/21" for ::1 at 2021-03-10 23:47:56 -0800
+Processing by Api::V1::AnimesController#destroy as JSON
+  Parameters: {"id"=>"21", "anime"=>{}}
+  [1m[36mAnime Load (5.9ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[36mAnime Destroy (1.0ms)[0m  [1m[31mDELETE FROM "animes" WHERE "animes"."id" = ?[0m  [["id", 21]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+Completed 200 OK in 20ms (Views: 1.0ms | ActiveRecord: 10.6ms | Allocations: 2570)
+
+
+Started DELETE "/api/v1/animes/22" for ::1 at 2021-03-10 23:47:57 -0800
+Processing by Api::V1::AnimesController#destroy as JSON
+  Parameters: {"id"=>"22", "anime"=>{}}
+  [1m[36mAnime Load (0.3ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[36mAnime Destroy (0.6ms)[0m  [1m[31mDELETE FROM "animes" WHERE "animes"."id" = ?[0m  [["id", 22]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+Completed 200 OK in 12ms (Views: 0.9ms | ActiveRecord: 2.9ms | Allocations: 2569)
+
+
+Started DELETE "/api/v1/animes/23" for ::1 at 2021-03-10 23:47:57 -0800
+Processing by Api::V1::AnimesController#destroy as JSON
+  Parameters: {"id"=>"23", "anime"=>{}}
+  [1m[36mAnime Load (0.3ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[36mAnime Destroy (0.8ms)[0m  [1m[31mDELETE FROM "animes" WHERE "animes"."id" = ?[0m  [["id", 23]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 3.3ms | Allocations: 2569)
+
+
+Started DELETE "/api/v1/animes/24" for ::1 at 2021-03-10 23:47:57 -0800
+Processing by Api::V1::AnimesController#destroy as JSON
+  Parameters: {"id"=>"24", "anime"=>{}}
+  [1m[36mAnime Load (0.2ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[36mAnime Destroy (0.9ms)[0m  [1m[31mDELETE FROM "animes" WHERE "animes"."id" = ?[0m  [["id", 24]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+Completed 200 OK in 10ms (Views: 0.9ms | ActiveRecord: 2.2ms | Allocations: 2569)
+
+
+Started DELETE "/api/v1/animes/25" for ::1 at 2021-03-10 23:47:58 -0800
+Processing by Api::V1::AnimesController#destroy as JSON
+  Parameters: {"id"=>"25", "anime"=>{}}
+  [1m[36mAnime Load (0.3ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[36mAnime Destroy (0.8ms)[0m  [1m[31mDELETE FROM "animes" WHERE "animes"."id" = ?[0m  [["id", 25]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 2.3ms | Allocations: 2569)
+
+
+Started DELETE "/api/v1/animes/26" for ::1 at 2021-03-10 23:47:58 -0800
+Processing by Api::V1::AnimesController#destroy as JSON
+  Parameters: {"id"=>"26", "anime"=>{}}
+  [1m[36mAnime Load (2.3ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[36mAnime Destroy (1.3ms)[0m  [1m[31mDELETE FROM "animes" WHERE "animes"."id" = ?[0m  [["id", 26]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+Completed 200 OK in 16ms (Views: 0.9ms | ActiveRecord: 7.9ms | Allocations: 2569)
+
+
+Started DELETE "/api/v1/animes/27" for ::1 at 2021-03-10 23:47:58 -0800
+Processing by Api::V1::AnimesController#destroy as JSON
+  Parameters: {"id"=>"27", "anime"=>{}}
+  [1m[36mAnime Load (0.3ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[36mAnime Destroy (1.6ms)[0m  [1m[31mDELETE FROM "animes" WHERE "animes"."id" = ?[0m  [["id", 27]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+Completed 200 OK in 21ms (Views: 0.6ms | ActiveRecord: 10.1ms | Allocations: 2569)
+
+
+Started DELETE "/api/v1/animes/28" for ::1 at 2021-03-10 23:47:59 -0800
+Processing by Api::V1::AnimesController#destroy as JSON
+  Parameters: {"id"=>"28", "anime"=>{}}
+  [1m[36mAnime Load (0.4ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[36mAnime Destroy (0.4ms)[0m  [1m[31mDELETE FROM "animes" WHERE "animes"."id" = ?[0m  [["id", 28]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 2.3ms | Allocations: 2569)
+
+
+Started DELETE "/api/v1/animes/29" for ::1 at 2021-03-10 23:47:59 -0800
+Processing by Api::V1::AnimesController#destroy as JSON
+  Parameters: {"id"=>"29", "anime"=>{}}
+  [1m[36mAnime Load (0.6ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[36mAnime Destroy (0.6ms)[0m  [1m[31mDELETE FROM "animes" WHERE "animes"."id" = ?[0m  [["id", 29]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+Completed 200 OK in 12ms (Views: 1.8ms | ActiveRecord: 3.1ms | Allocations: 2569)
+
+
+Started DELETE "/api/v1/animes/30" for ::1 at 2021-03-10 23:47:59 -0800
+Processing by Api::V1::AnimesController#destroy as JSON
+  Parameters: {"id"=>"30", "anime"=>{}}
+  [1m[36mAnime Load (0.2ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[36mAnime Destroy (0.8ms)[0m  [1m[31mDELETE FROM "animes" WHERE "animes"."id" = ?[0m  [["id", 30]]
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:13:in `destroy'
+Completed 200 OK in 14ms (Views: 0.9ms | ActiveRecord: 4.2ms | Allocations: 2740)
+
+
+Started GET "/api/v1/animes" for ::1 at 2021-03-10 23:48:08 -0800
+Processing by Api::V1::AnimesController#index as HTML
+  [1m[36mAnime Load (0.3ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 1396)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 23:48:30 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"jake"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jake"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `create'
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "jake"], ["created_at", "2021-03-11 07:48:30.664760"], ["updated_at", "2021-03-11 07:48:30.664760"]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `create'
+Completed 200 OK in 22ms (Views: 1.6ms | ActiveRecord: 3.5ms | Allocations: 3050)
+
+
+Started GET "/api/v1/animes" for ::1 at 2021-03-10 23:48:30 -0800
+Processing by Api::V1::AnimesController#index as */*
+  [1m[36mAnime Load (0.2ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 1398)
+
+
+Started POST "/api/v1/animes" for ::1 at 2021-03-10 23:49:40 -0800
+Processing by Api::V1::AnimesController#create as JSON
+  Parameters: {"anime"=>{"title"=>"Plunderer", "rating"=>"7", "review"=>"super cooooool", "user_id"=>7}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[36mAnime Create (12.8ms)[0m  [1m[32mINSERT INTO "animes" ("title", "rating", "user_id", "review", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Plunderer"], ["rating", 7], ["user_id", 7], ["review", "super cooooool"], ["created_at", "2021-03-11 07:49:40.205191"], ["updated_at", "2021-03-11 07:49:40.205191"]]
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:8:in `create'
+Completed 200 OK in 45ms (Views: 0.6ms | ActiveRecord: 16.1ms | Allocations: 3737)
+
+
+Started GET "/api/v1/animes" for ::1 at 2021-03-10 23:49:43 -0800
+Processing by Api::V1::AnimesController#index as HTML
+  [1m[36mAnime Load (0.3ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms | Allocations: 1548)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-03-10 23:49:48 -0800
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"jake"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jake"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jake"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/7
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms | Allocations: 1132)
+
+
+Started GET "/api/v1/users/7" for ::1 at 2021-03-10 23:49:48 -0800
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"7", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 712)
+
+
+Started GET "/api/v1/animes" for ::1 at 2021-03-10 23:49:49 -0800
+Processing by Api::V1::AnimesController#index as */*
+  [1m[36mAnime Load (0.3ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/api/v1/animes_controller.rb:4:in `index'
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.3ms | Allocations: 1550)
+
+
