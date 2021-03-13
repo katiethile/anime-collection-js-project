@@ -14,7 +14,7 @@ class User {
             e.preventDefault()
             apiService.findOrCreateUser(e)
                 .then(user => {
-                    console.log(user)
+                    // console.log(user)
                     let newUser = new User(user)
                     newUser.displayUser()
                 })
@@ -36,6 +36,7 @@ class User {
                 if (this.id == animes[i].user_id){
                     let userAnimes = new Anime(animes[i]);
                     userAnimes.createAnimeCard();
+
                 }
             }
         })

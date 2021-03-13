@@ -51,14 +51,8 @@ class ApiService {
 
     async deleteAnime(e){
         const response = await fetch (`${this.baseUrl}/animes/${e.target.parentNode.dataset.id}`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-                },
-            })
-            return response.json()
-        }
-        
+            method: "DELETE"
+        })
     }
-    
+}
+        
