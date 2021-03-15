@@ -20,7 +20,6 @@ class ApiService {
                 return response.json()
     }
 
-
     async displayAllAnimes(){
         const resp = await fetch(`${this.baseUrl}/animes`) 
         let json = resp.json();

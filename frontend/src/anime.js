@@ -53,7 +53,6 @@ class Anime {
         this.appendAnime(p)
     }
 
-
     appendAnime(p){
         let animes = document.getElementsByClassName('animes-container')
         animes[0].append(p)

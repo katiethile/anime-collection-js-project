@@ -27,16 +27,16 @@ class User {
         let userGreeting = document.createElement('p')
         userGreeting.setAttribute('data-id', this.id)
         let id = userGreeting.dataset.id
-        userGreeting.innerHTML = `<h1>Hey, ${this.username}!</h1>`
+        userGreeting.innerHTML = `<h2>Hey, ${this.username}!</h2>`
         body.append(userGreeting)
         this.renderAnimes()
         apiService.displayAllAnimes()
+
         .then(animes => {
             for (let i=0; i < animes.length; i++){
                 if (this.id == animes[i].user_id){
                     let userAnimes = new Anime(animes[i]);
                     userAnimes.createAnimeCard();
-
                 }
             }
         })
