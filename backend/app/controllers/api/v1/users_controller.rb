@@ -7,16 +7,17 @@ class Api::V1::UsersController < ApplicationController
     def create
         if User.find_by(:username => user_params[:username])
             user = User.find_by(:username => user_params[:username])
-            redirect_to "/api/v1/users/#{user.id}"
         else
             user = User.create(user_params)
-            render json: user
         end
+        redirect_to api_v1_user_path(user)
     end
 
     def show 
         user = User.find_by(:id => params[:id].to_i)
-        render json: user 
+        render json: user.to_json(:include => {
+            :animes => {:except => [:created_at,:updated_at, :user_id]}
+        })
     end 
 
     private 
