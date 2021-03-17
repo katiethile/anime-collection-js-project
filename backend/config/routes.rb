@@ -3,6 +3,6 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :animes
       resources :users
+      end 
     end
   end
-end 
