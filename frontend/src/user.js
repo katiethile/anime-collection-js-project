@@ -22,6 +22,7 @@ class User {
     }
 
     displayUser() {
+        Anime.renderSortBtn()
         let body = document.getElementById('container')
         body.innerHTML = ''
         let userGreeting = document.createElement('p')
@@ -29,14 +30,13 @@ class User {
         let id = userGreeting.dataset.id
         userGreeting.innerHTML = `<h2>Hey, ${this.username}!</h2>`
         body.append(userGreeting)
-        apiService.getAllAnimes()
+        apiService.getAllAnimes(this.id)
 
-        .then(animes => {
-            for (let i=0; i < animes.length; i++){
-                if (this.id == animes[i].user_id){
-                    let userAnimes = new Anime(animes[i]);
-                    userAnimes.createAnimeCard();
-                }
+        .then(user => {
+            let animesList = user.animes
+            for(let anime of animesList){
+                let newAnime = new Anime(anime)
+                newAnime.createAnimeCard()
             }
         })
         Anime.newAnimeForm(this.id)
