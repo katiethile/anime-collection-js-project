@@ -46,6 +46,8 @@ class Anime {
 
     createAnimeCard() {
         let p = document.createElement('p')
+        let pTitle = document.createElement('p')
+        pTitle.classList.add('pTitle')
         p.setAttribute('data-id', this.id)
         p.innerHTML = `${this.title} - ${this.rating} - ${this.review}`
         let removeForm = ` <button type="button" id="${this.id}" class="remove-anime"> Remove Anime </button>`
@@ -61,12 +63,20 @@ class Anime {
     }
 
     async remove(button){
-        button.addEventListener('click', function(e){
+        button.addEventListener('click', (e)=>{
             e.preventDefault()
             apiService.deleteAnime(e)
                 e.target.parentElement.remove();
+                Anime.removeAnimeFromArray(e.target.parentNode.dataset.id)
         })
     }
 
+    static removeAnimeFromArray(id) {
+        for(let a of this.allAnimes){
+            if(a.id === parseInt(id)){
+                this.allAnimes.splice(a,1)
+            }
+        }
+    }
     
 }

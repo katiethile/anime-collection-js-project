@@ -29,8 +29,7 @@ class User {
         let id = userGreeting.dataset.id
         userGreeting.innerHTML = `<h2>Hey, ${this.username}!</h2>`
         body.append(userGreeting)
-        this.renderAnimes()
-        apiService.displayAllAnimes()
+        apiService.getAllAnimes()
 
         .then(animes => {
             for (let i=0; i < animes.length; i++){
@@ -42,14 +41,4 @@ class User {
         })
         Anime.newAnimeForm(this.id)
     }
-
-    renderAnimes() {
-        if (this.animes) {
-            this.animes.forEach(function(anime){
-                let newAnime = new Anime(anime)
-                newAnime.createAnimeCard()
-            })
-        }
-    }
-    
 }
