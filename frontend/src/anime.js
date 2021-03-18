@@ -100,7 +100,6 @@ class Anime {
                 return 0
             }
         })
-        debugger
         const animes = document.querySelectorAll('div#animes-container p'); //return a nodelist of p tags
         animes.forEach((anime) => {
             anime.remove()
@@ -108,7 +107,6 @@ class Anime {
         for(let anime of sortedAnimesArray) {
             anime.createAnimeCard()
         }
-
 }
     
 }
