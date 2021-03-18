@@ -53,6 +53,7 @@ class ApiService {
         const response = await fetch (`${this.baseUrl}/animes/${e.target.parentNode.dataset.id}`, {
             method: "DELETE"
         })
+        // debugger
     }
 }
         

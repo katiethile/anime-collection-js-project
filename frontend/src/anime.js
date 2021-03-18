@@ -72,10 +72,12 @@ class Anime {
     }
 
     static removeAnimeFromArray(id) {
-        for(let a of this.allAnimes){
+        let i=0; 
+        for(let a of Anime.allAnimes){
             if(a.id === parseInt(id)){
-                this.allAnimes.splice(a,1)
+                Anime.allAnimes.splice(i,1)
             }
+            i++ 
         }
     }
 
@@ -98,6 +100,7 @@ class Anime {
                 return 0
             }
         })
+        debugger
         const animes = document.querySelectorAll('div#animes-container p'); //return a nodelist of p tags
         animes.forEach((anime) => {
             anime.remove()
